@@ -12,10 +12,13 @@ for line in fh:
     if not line.startswith("X-DSPAM-Confidence:"):
 	    continue
     m = line.rstrip()
+    print("The Lines are: ", m)
     k = m.find("0")
     l = m[k:len(m)]
     j = float(l)
     s = s + j
     count = count + 1
+print("Total sum of the number:", s)
+print("Total number of lines:", count)
 a = s/count
 print("Average spam confidence:", round(a, 12))
